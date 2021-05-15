@@ -21,10 +21,10 @@ public class Account {
         return myAccountBalance;
     }
 
-    public void withdraw(double amountToWithdraw) {
+    public void withdraw(double amountToWithdraw, int enteredPin) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your 4-digit pin: ");
-        int enteredPin = input.nextInt();
+        enteredPin = input.nextInt();
 
         if(enteredPin != pin){
             System.out.print("Incorrect Pin");

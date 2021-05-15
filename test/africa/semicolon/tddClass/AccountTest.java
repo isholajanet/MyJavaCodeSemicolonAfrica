@@ -48,12 +48,23 @@ public class AccountTest {
         Account janetAccount = new Account();
         //when
         janetAccount.deposit(1000.00);
-        janetAccount.withdraw(850.00);
+        janetAccount.withdraw(850.00, 1233);
 
         //confirm
         double janetBalance = janetAccount.getAccountBalance();
         assertEquals(150.00, janetBalance);
 
+    }
+    @Test
+    public void testThatUserCannotDepositANegativeValue(){
+        //given
+        Account janetAccount = new Account();
+        //when
+        janetAccount.deposit(850.00);
+        janetAccount.deposit(-850.00);
+        //confirm
+        double janetBalance = janetAccount.getAccountBalance();
+        assertEquals(850.00, janetBalance);
     }
     @Test
     public void testThatUserCanSetPin(){

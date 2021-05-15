@@ -12,7 +12,6 @@ public class Example{
 		System.out.print("Enter the second number ");
 		secondNumber = input.nextInt();
 		sum = firstNumber + secondNumber;
-		int difference  = 
 		System.out.printf("The sum is %d", sum);
 
 	}

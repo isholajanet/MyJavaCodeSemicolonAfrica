@@ -15,7 +15,7 @@ import java.util.Scanner;
 		System.out.print("Enter the value for z ");
 		z = input.nextInt();
 		result = x + y + z;
-		System.out.printf("Sum is %d%n" result);
+		System.out.printf("Sum is %d%n", result);
 		
 		
 		}
