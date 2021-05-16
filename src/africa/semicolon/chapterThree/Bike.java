@@ -21,40 +21,50 @@ public class Bike {
     }
 
     public int getSpeedInKmPerHour() {
+
         return speedInKmPerHour;
     }
 
     public boolean isOn() {
+
         return isOn;
     }
 
 
     public void setOn(boolean isEngineOn) {
-        this.isOn = isEngineOn;
+         this.isOn = isEngineOn;
+        if(isOn){
+            gearInMotion = 1;
+        }
+        else{
+            gearInMotion = 0;
+        }
 
     }
 
-    public void speedUpBike() {
-
-   }
 
     public void setGear(int gear) {
-        if(isOn && speedInKmPerHour > 0 && speedInKmPerHour <= 60){
-            gear = 1;
-        }else if (isOn && speedInKmPerHour > 61 && speedInKmPerHour <= 120){
-            gear = 2;
-        }else if (isOn && speedInKmPerHour > 121 && speedInKmPerHour <= 180){
-            gear = 3;
-        }else if (isOn && speedInKmPerHour > 181 && speedInKmPerHour <= 240){
-            gear = 4;
-        }else if (isOn && speedInKmPerHour > 241 && speedInKmPerHour <= 300){
-            gear = 5;
-        }
         this.gearInMotion = gear;
     }
 
     public int getGear() {
         return gearInMotion;
+    }
+
+    public void accelerate(){
+        if(isOn && speedInKmPerHour > 0 && speedInKmPerHour < 60){
+            gearInMotion = 1;
+        }else if (isOn && speedInKmPerHour >= 60 && speedInKmPerHour < 120){
+            gearInMotion = 2;
+        }else if (isOn && speedInKmPerHour >= 120 && speedInKmPerHour < 180){
+            gearInMotion = 3;
+        }else if (isOn && speedInKmPerHour >= 180 && speedInKmPerHour < 240){
+            gearInMotion = 4;
+        }else if (isOn && speedInKmPerHour >= 240 && speedInKmPerHour < 300){
+            gearInMotion = 5;
+        }
+
+        speedInKmPerHour = speedInKmPerHour + gearInMotion;
     }
 }
 
