@@ -44,4 +44,12 @@ package africa.semicolon.tddClass;
 
 
         }
+
+        public void decreaseTemperature() {
+            if(temperature > 16 && temperature <=30){
+                temperature = temperature - 1;
+            }else{
+                temperature = temperature;
+            }
+        }
     }
