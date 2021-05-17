@@ -30,6 +30,16 @@ public class AirConditionerTest {
         assertEquals(17, myAc.getTemperature());
 
     }
+    @Test
+    public void testThatTemperatureCanBeIncreased(){
+        //when
+        myAc.setOn(true);
+        assertTrue(myAc.isOn());
+        myAc.setTemperature(18);
+        assertEquals(18, myAc.getTemperature());
+        myAc.increaseTemperature();
+        assertEquals(19, myAc.getTemperature());
+    }
 
 
 }

@@ -34,4 +34,14 @@ package africa.semicolon.tddClass;
         public int getTemperature() {
             return temperature;
         }
+
+        public void increaseTemperature() {
+            if (temperature >=16 && temperature < 30){
+                temperature = temperature + 1;
+            }else{
+                temperature = temperature;
+            }
+
+
+        }
     }
