@@ -9,7 +9,6 @@ public class Bike {
      * public Bike(boolean isEngineOn, int OurDefaultSpeedInKmPerHour){
      * isOn = isEngineOn;
      * speedInKmPerHour = OurDefaultSpeedInKmPerHour;
-     * <p>
      * }
      **/
 
@@ -52,6 +51,7 @@ public class Bike {
     }
 
     public void accelerate(){
+        int maximumSpeed = 300;
         if(isOn && speedInKmPerHour > 0 && speedInKmPerHour < 60){
             gearInMotion = 1;
         }else if (isOn && speedInKmPerHour >= 60 && speedInKmPerHour < 120){
@@ -62,6 +62,8 @@ public class Bike {
             gearInMotion = 4;
         }else if (isOn && speedInKmPerHour >= 240 && speedInKmPerHour < 300){
             gearInMotion = 5;
+        } else if (speedInKmPerHour == maximumSpeed){
+            gearInMotion = 0;
         }
 
         speedInKmPerHour = speedInKmPerHour + gearInMotion;

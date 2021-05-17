@@ -2,13 +2,13 @@
  * if the speed is above 60km/h / change to gear 3 is the speed is above 120km/h / change to gear 4 is above 180km
  * /change to gear 5 if the speed is above 240km/h
  * i.e gear 1 - 1km/h - 60km/h
- * gear 2 - 62km/h - 120km/h
- * gear 3 - 123km/h - 180km/h
- * gear 4 - 184km/h - 240km/h
- * gear 5 - 245km/h - 300km/h  **/
+ * gear 2 - 60km/h - 120km/h
+ * gear 3 - 120km/h - 180km/h
+ * gear 4 - 180km/h - 240km/h
+ * gear 5 - 240km/h - 300km/h  **/
 package africa.semicolon.chapterThree;
 
-//import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -82,11 +82,11 @@ public class BikeTest {
         okada.setOn(true);
         assertTrue(okada.isOn());
         //set our speed in kilometre per hour
-        okada.setSpeedInKmPerHour(120);
-        assertEquals(120, okada.getSpeedInKmPerHour());
+        okada.setSpeedInKmPerHour(163);
+        assertEquals(163, okada.getSpeedInKmPerHour());
         okada.accelerate();
         assertEquals(3, okada.getGear());
-        assertEquals(123, okada.getSpeedInKmPerHour());
+        assertEquals(166, okada.getSpeedInKmPerHour());
     }
     @Test
     public void testThatBikeCanChangeToGearFourWhenTheSpeedIncreases(){
@@ -105,12 +105,13 @@ public class BikeTest {
         //when
         okada.setOn(true);
         assertTrue(okada.isOn());
-        okada.setSpeedInKmPerHour(280);
-        assertEquals(280, okada.getSpeedInKmPerHour());
+        okada.setSpeedInKmPerHour(295);
+        assertEquals(295, okada.getSpeedInKmPerHour());
         okada.accelerate();
         assertEquals(5, okada.getGear());
-        assertEquals(285, okada.getSpeedInKmPerHour());
+        assertEquals(300, okada.getSpeedInKmPerHour());
     }
+
 
 
 }
