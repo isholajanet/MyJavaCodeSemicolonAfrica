@@ -160,6 +160,17 @@ public class TelevisionTest {
         myTv.decreaseBrightness();
         assertEquals(0, myTv.getTvBrightness());
     }
+    @Test
+    public void testThatTvBrightnessRetainItsPreviousStateWhenItsSwitchedOn(){
+        myTv.setOn(true);
+        assertTrue(myTv.isOn());
+        myTv.setBrightness(30);
+        myTv.setOn(false);
+        assertFalse(myTv.isOn());
+        myTv.setOn(true);
+        assertTrue(myTv.isOn());
+        assertEquals(30, myTv.getTvBrightness());
+    }
 
 
 }

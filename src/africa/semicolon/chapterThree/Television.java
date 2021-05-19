@@ -97,7 +97,7 @@ public class Television {
     }
 
     public int increaseBrightness() {
-        final int MINIMUM_BRIGHTNESS = 0;
+        final int MINIMUM_BRIGHTNESS = 10;
         final int MAXIMUM_BRIGHTNESS = 100;
         if (isOn == true)
             if (brightness >= MINIMUM_BRIGHTNESS && brightness < MAXIMUM_BRIGHTNESS)
@@ -110,7 +110,7 @@ public class Television {
     }
 
     public int decreaseBrightness() {
-        final int MINIMUM_BRIGHTNESS = 0;
+        final int MINIMUM_BRIGHTNESS = 10;
         final int MAXIMUM_BRIGHTNESS = 100;
         if (isOn == true)
             if (brightness > MINIMUM_BRIGHTNESS && brightness <= MAXIMUM_BRIGHTNESS)
