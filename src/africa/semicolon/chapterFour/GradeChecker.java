@@ -29,7 +29,7 @@ public class GradeChecker {
         if (grade >= 60 && grade <= 69){
             System.out.println("D");
         }
-        if (grade > 60){
+        if (grade < 60){
             System.out.println("F");
         }
 
