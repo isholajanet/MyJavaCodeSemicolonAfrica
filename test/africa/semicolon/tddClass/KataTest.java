@@ -6,17 +6,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KataTest {
     @Test
-    public void testThatGradeCanBeSet(){
+    public void testThatGradeIsAIfScoreIsGreaterThanOrEqualTo90(){
         Kata myGrade = new Kata();
-        myGrade.setGrade(90);
-        assertEquals(90, myGrade.getGrade());
+        assertEquals("A", myGrade.displayGrade(90));
     }
     @Test
-    public void testThatGradeWillBeDisplayedIfTheGradeNumberIsSet(){
-        Kata myGrade =  new Kata();
-        myGrade.setGrade(50);
-        myGrade.displayGrade();
-        assertEquals(50, myGrade.getGrade());
+    public void testThatGradeIsBIfScoreIsGreaterThanOrEqualTo80(){
+        Kata myGrade = new Kata();
+        assertEquals("B", myGrade.displayGrade(80));
+    }
+    @Test
+    public void testThatGradeIsCIfScoreIsGreaterThanOrEqualTo70(){
+        Kata myGrade = new Kata();
+        assertEquals("C", myGrade.displayGrade(70));
+    }
+    @Test
+    public void testThatGradeIsDIfScoreIsGreaterThanOrEqualTo60(){
+        Kata myGrade = new Kata();
+        assertEquals("D", myGrade.displayGrade(60));
+    }
+    @Test
+    public void testThatGradeIsFIfScoreIsLessThan60(){
+        Kata myGrade = new Kata();
+        assertEquals("F", myGrade.displayGrade(50));
+    }
+
+
 
     }
-}
+

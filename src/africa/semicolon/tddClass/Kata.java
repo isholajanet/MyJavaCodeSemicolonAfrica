@@ -16,31 +16,24 @@ public class Kata {
 
 
     }
+    private String grade;
+    public String displayGrade(int score) {
 
-    private int gradeNumber;
-    public void setGrade(int gradeNumber) {
-        this.gradeNumber = gradeNumber;
-    }
-
-    public int getGrade() {
-        return gradeNumber;
-
-    }
-
-    public void displayGrade() {
-        if (gradeNumber >= 90) {
-            System.out.println("A");
+        if (score >= 90) {
+            grade = "A";
         }else
-        if(gradeNumber >= 80) {
-            System.out.println("B");
+        if(score >= 80) {
+            grade = "B";
         }else
-        if (gradeNumber >= 70) {
-            System.out.println("C");
+        if (score >= 70) {
+            grade = "C";
         }else
-        if (gradeNumber >= 60) {
-            System.out.println("D");
-        }else {
-            System.out.println("F");
+        if (score >= 60) {
+            grade = "D";
+        }else
+        if (score < 60) {
+            grade = "F";
         }
+        return grade;
     }
 }
