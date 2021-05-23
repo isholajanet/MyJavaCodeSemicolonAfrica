@@ -36,4 +36,35 @@ public class Kata {
         }
         return grade;
     }
+    private int price;
+    public int displayTotalPrice(int numberOfCopies) {
+        if(numberOfCopies >= 1 && numberOfCopies <=4){
+            price = 1500;
+        }
+        else
+            if(numberOfCopies >= 5 &&  numberOfCopies <=9){
+                price = 1400;
+            }
+            else
+                if(numberOfCopies >=10 && numberOfCopies <=29){
+                    price = 1200;
+                }
+                else
+                    if(numberOfCopies >= 30 && numberOfCopies <= 49){
+                        price = 1100;
+                }
+                    else
+                        if(numberOfCopies >= 50 && numberOfCopies <= 99){
+                            price = 1000;
+                        }
+                        else
+                            if(numberOfCopies >= 100 && numberOfCopies <=199){
+                                price = 900;
+                            }
+                            else
+                                if(numberOfCopies >= 200){
+                                    price = 800;
+                                }
+        return price;
+    }
 }
