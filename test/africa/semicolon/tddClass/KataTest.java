@@ -34,40 +34,79 @@ public class KataTest {
     @Test
     public void testThatUnitPriceIs1500IfTheNumbersOfCopiesIsInBetween1To4(){
         Kata price = new Kata();
-        assertEquals(1500, price.displayTotalPrice(2));
+        assertEquals(3000, price.displayTotalPrice(2));
     }
     @Test
     public void testThatUnitPriceIs1400IfTheNumbersOfCopiesIsBetween5To9(){
         Kata price = new Kata();
-        assertEquals(1400, price.displayTotalPrice(5));
+        assertEquals(7000, price.displayTotalPrice(5));
     }
     @Test
     public void testThatUnitPriceIs1200IfTheNumbersOfCopiesIsBetween10To29(){
         Kata price = new Kata();
-        assertEquals(1200, price.displayTotalPrice(28));
+        assertEquals(33600, price.displayTotalPrice(28));
     }
     @Test
     public void testThatUnitPriceIs1100IfTheNumbersOfCopiesIsBetween30To49(){
         Kata price = new Kata();
-        assertEquals(1100, price.displayTotalPrice(40));
+        assertEquals(44000, price.displayTotalPrice(40));
     }
     @Test
     public void testThatUnitPriceIs1000IfTheNumbersOfCopiesIsBetween50To99(){
         Kata price = new Kata();
-        assertEquals(1000, price.displayTotalPrice(90));
+        assertEquals(80000, price.displayTotalPrice(80));
     }
     @Test
     public void testThatUnitPriceIs900IfTheNumbersOfCopiesIsBetween100To199(){
         Kata price = new Kata();
-        assertEquals(900, price.displayTotalPrice(100));
+        assertEquals(90000, price.displayTotalPrice(100));
     }
     @Test
     public void testThatUnitPriceIs800IfTheNumbersOfCopiesIs200AndAbove(){
         Kata price = new Kata();
-        assertEquals(800, price.displayTotalPrice(203));
+        assertEquals(162400, price.displayTotalPrice(203));
     }
 
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween1To4(){
+        Kata price = new Kata();
+        assertEquals(2000, price.displayProfit(4));
+    }
 
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween5To9(){
+        Kata price = new Kata();
+        assertEquals(4800, price.displayProfit(8));
+    }
+
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween10To29(){
+        Kata price = new Kata();
+        assertEquals(8000, price.displayProfit(10));
+    }
+
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween30To49(){
+        Kata price = new Kata();
+        assertEquals(36000, price.displayProfit(40));
+    }
+
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween50To99(){
+        Kata price = new Kata();
+        assertEquals(60000, price.displayProfit(60));
+    }
+
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesInBetween100To199(){
+        Kata price = new Kata();
+        assertEquals(132000, price.displayProfit(120));
+    }
+    @Test
+    public void testToGetTheProfitForNumberOfCopiesFor200AndAbove(){
+        Kata price = new Kata();
+        assertEquals(242400, price.displayProfit(202));
+    }
 
     }
 
