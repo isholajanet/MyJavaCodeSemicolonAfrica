@@ -37,4 +37,10 @@ public class Account {
             balance = balance - withdrawAmount;
         }
     }
+
+    public static void displayAccount(Account myAccount) {
+        System.out.println(myAccount.getAccountName());
+        System.out.println(myAccount.getAccountBalance());
+
+    }
 }

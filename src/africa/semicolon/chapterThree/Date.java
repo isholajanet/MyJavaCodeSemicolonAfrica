@@ -10,9 +10,15 @@ public class Date {
         this.day = day;
         this.year = year;
     }
+    public Date() { }
 
     public void setMonth(int month) {
-        this.month = month;
+        if (month < 1 || month > 12){
+            this.month = 0;
+            System.out.println("enter valid month between 1 and 12");
+        }else{
+            this.month = month;
+        }
     }
 
     public int getMonth() {
@@ -28,6 +34,9 @@ public class Date {
     }
 
     public void setYear(int year) {
+        if(year < 1950 || year > 2050){
+            this.year = 0;
+        }
         this.year = year;
     }
 
@@ -36,4 +45,9 @@ public class Date {
     }
 
 
+
+
+    public String displayDate() {
+        return String.format(month +"/" +day +"/" + year ) ;
+    }
 }

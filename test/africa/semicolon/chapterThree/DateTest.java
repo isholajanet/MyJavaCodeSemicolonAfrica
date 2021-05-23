@@ -11,10 +11,12 @@ public class DateTest {
     public void runBeforeAllTest(){
         myDate = new Date(10, 20, 1998);
     }
+
+
     @Test
     public void testThatMyMonthCanBeSet(){
-        myDate.setMonth(12);
-        assertEquals(12, myDate.getMonth());
+        myDate.setMonth(13);
+        assertEquals(0, myDate.getMonth());
     }
     @Test
     public void testThatMyDayCanBeSet(){
@@ -32,7 +34,8 @@ public class DateTest {
         myDate.setMonth(12);
         myDate.setDay(25);
         myDate.setYear(2014);
-        System.out.printf("%d / %d / %d", myDate.getMonth(), myDate.getDay(), myDate.getYear() );
+        myDate.displayDate();
+//
+//        System.out.printf("%d / %d / %d", myDate.getMonth(), myDate.getDay(), myDate.getYear() );
     }
-
 }

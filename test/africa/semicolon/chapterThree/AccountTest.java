@@ -3,6 +3,7 @@ package africa.semicolon.chapterThree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static africa.semicolon.chapterThree.Account.displayAccount;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountTest {
@@ -44,5 +45,14 @@ public class AccountTest {
         myAccount.setAccountBalance(100.00);
         myAccount.withdraw(120.00);
         assertEquals(100.00, myAccount.getAccountBalance());
+    }
+    @Test
+    public void testThatAccountCanDisplayAccount(){
+        myAccount = new Account("Ishola Janet", 50.00);
+        Account janet = new Account("Olayemi Oladunni", 400.00);
+        displayAccount(janet);
+        displayAccount(myAccount);
+
+
     }
 }
