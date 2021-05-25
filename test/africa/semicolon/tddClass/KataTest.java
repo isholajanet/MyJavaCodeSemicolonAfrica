@@ -107,6 +107,11 @@ public class KataTest {
         Kata price = new Kata();
         assertEquals(242400, price.displayProfit(202));
     }
+    @Test
+    public void testToReturnFactorCount(){
+        Kata factor = new Kata();
+        assertEquals(4, factor.returnFactorCount(10));
+    }
 
     }
 
