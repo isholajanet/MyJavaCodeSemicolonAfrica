@@ -4,38 +4,86 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DateTest {
     Date myDate;
     @BeforeEach
-    public void runBeforeAllTest(){
-        myDate = new Date(10, 20, 1998);
-    }
+    public void RunBeforeEachTest(){
 
-
-    @Test
-    public void testThatMyMonthCanBeSet(){
-        myDate.setMonth(13);
-        assertEquals(0, myDate.getMonth());
+        myDate = new Date(1, 1, 1950);
     }
     @Test
-    public void testThatMyDayCanBeSet(){
+    public void testToShowThatICanGetMyDay(){
+
+        assertEquals(0, myDate.getDay());
+    }
+    @Test
+    public void testThatICanGetMyMonth(){
+
+        assertEquals(00, myDate.getMonth());
+    }
+    @Test
+    public void testThatICanGetYear(){
+
+        assertEquals(0000, myDate.getYear());
+    }
+    @Test
+    public void testThatDayCanBeSet(){
+        myDate.setDay(27);
+        assertEquals(27, myDate.getDay());
+    }
+    @Test
+    public void testThatMonthCanBeSet(){
+        myDate.setMonth(5);
+        assertEquals(5, myDate.getMonth());
+    }
+    @Test
+    public void testThatYearCanBeSet(){
+        myDate.setYear(2021);
+        assertEquals(2021, myDate.getYear());
+    }
+    @Test
+    public void testThatDateCanBeDisplayed(){
         myDate.setDay(28);
-        assertEquals(28, myDate.getDay());
+        myDate.setMonth(4);
+        myDate.setYear(2021);
+        assertEquals("28/4/2021", myDate.displayDate());
     }
     @Test
-    public void testThatMyYearCanBeSet(){
-        myDate.setYear(1999);
-        assertEquals(1999, myDate.getYear());
+    public void testThatMonthWith31DaysWillNotAcceptMoreThanAnyValueGreaterThan31(){
+        myDate.setMonth(4);
+        myDate.setDay(32);
+        myDate.setYear(1998);
+        assertEquals("1/4/1998", myDate.displayDate());
+    }
+    @Test
+    public void testThatMonthWith30DaysWillNotAcceptMoreThanAnyValueGreaterThan30(){
+        myDate.setMonth(9);
+        myDate.setDay(31);
+        myDate.setYear(2020);
+        assertEquals("1/9/2020",myDate.displayDate());
+    }
+    @Test
+    public void testThatChecksForALeapYear(){
+        myDate.setYear(2020);
+        assertEquals(true, myDate.checkLeapYear());
+    }
+    @Test
+    public void testThatFebruaryCannotBeSetTo29IfTheYearIsNotALeapYear(){
+        myDate.setYear(2021);
+        myDate.setMonth(2);
+        myDate.setDay(29);
+        assertEquals(false, myDate.checkLeapYear());
+        assertEquals("1/2/2021", myDate.displayDate());
+    }
+    @Test
+    public void testThatFebruaryCanBeSetTo29DaysIfYearIsALeapYear(){
+        myDate.setYear(2020);
+        myDate.setMonth(2);
+        myDate.setDay(29);
+        assertEquals(true, myDate.checkLeapYear());
+        assertEquals("29/2/2020", myDate.displayDate());
+    }
 
-    }
-    @Test
-    public void testToDisplayTheYear(){
-        myDate.setMonth(12);
-        myDate.setDay(25);
-        myDate.setYear(2014);
-        myDate.displayDate();
-//
-//        System.out.printf("%d / %d / %d", myDate.getMonth(), myDate.getDay(), myDate.getYear() );
-    }
 }

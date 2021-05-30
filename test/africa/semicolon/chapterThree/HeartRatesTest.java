@@ -3,15 +3,14 @@ package africa.semicolon.chapterThree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.nio.charset.StandardCharsets;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HeartRatesTest {
     HeartRate myHeartRate;
+    Date myDate;
     @BeforeEach
     public void runThisBeforeEachTest(){
-        myHeartRate = new HeartRate("Janet", "Ishola");
+        myHeartRate = new HeartRate("Janet","Ishola");
     }
 
 
@@ -28,23 +27,30 @@ public class HeartRatesTest {
         assertEquals("Ishola", myHeartRate.getLastName());
     }
     @Test
+    public void testThatUserCanSetDateOfBirth(){
+        Date myDate = new Date(12, 12, 1998);
+        assertEquals("12/12/1998", myDate.displayDate());
+
+
+    }
+    @Test
     public void testThatHeartRatesCanDisplayBothNameTogether(){
         myHeartRate.setFirstName("Janet");
         myHeartRate.setLastName("Ishola");
-        myHeartRate.DisplayName();
+        myHeartRate.displayName();
     }
-
 
     @Test
-    void testUserHasDateOfBirth(){
-        myHeartRate.setDate(12, 7, 2002);
-        assertEquals(myHeartRate.getDate().getDay(), 7);
-        assertEquals(myHeartRate.getDate().displayDate(),"12/7/2002");
-
-        System.out.println(myHeartRate.toString());
+    public void testThatSystemCanDisplayUserDetails(){
+        Date myDate = new Date(13, 12, 2010);
+        myHeartRate.setFirstName("Kelvin");
+        myHeartRate.setLastName("Okoro");
+        myDate.setDay(13);
+        myDate.setMonth(12);
+        myDate.setYear(2010);
+        myHeartRate.displayDateOfBirth();
 
     }
-
 
 
 }
