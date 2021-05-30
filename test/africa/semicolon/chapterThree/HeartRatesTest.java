@@ -10,7 +10,7 @@ public class HeartRatesTest {
     Date myDate;
     @BeforeEach
     public void runThisBeforeEachTest(){
-        myHeartRate = new HeartRate("Janet","Ishola");
+        myHeartRate = new HeartRate("Janet","Ishola", new Date(12, 12, 1999));
     }
 
 
@@ -41,16 +41,38 @@ public class HeartRatesTest {
     }
 
     @Test
-    public void testThatSystemCanDisplayUserDetails(){
-        Date myDate = new Date(13, 12, 2010);
-        myHeartRate.setFirstName("Kelvin");
-        myHeartRate.setLastName("Okoro");
-        myDate.setDay(13);
-        myDate.setMonth(12);
-        myDate.setYear(2010);
-        myHeartRate.displayDateOfBirth();
+    public void testThatHeartRatesCanCalculatePatientAge(){
+       myDate = new Date(12,12,1998);
+       // myHeartRate.getAge();
+        assertEquals(22, myHeartRate.getAge());
+    }
 
+    @Test
+    public void testThatHeartRatesCanCalculatePatientMaximumHeartRate(){
+        myDate = new Date(12, 12,1998);
+        assertEquals(198, myHeartRate.getMaximumHeartRate());
+    }
+    @Test
+    public void testThatHeartRatesCanCalculateMinimumTargetHeartRate(){
+        myDate = new Date(12, 12,1998);
+        myHeartRate.getMaximumHeartRate();
+        assertEquals(99, myHeartRate.getMinimumTargetHeartRate());
+    }
+    @Test
+    public void testThatHeartRatesCanCalculateMaximumTargetHeartRate(){
+        myDate = new Date(12, 12,1998);
+        myHeartRate.getMaximumHeartRate();
+        assertEquals(168, myHeartRate.getMaximumTargetHeartRate());
+    }
+    @Test
+    public void testThatHeartRatesCanDisplayTargetHeartRates(){
+        myDate = new Date(12, 12,1998);
+        myHeartRate.getMaximumHeartRate();
+        myHeartRate.getMinimumTargetHeartRate();
+        myHeartRate.getMaximumTargetHeartRate();
+        myHeartRate.displayTargetHeartRate();
+    }
     }
 
 
-}
+
