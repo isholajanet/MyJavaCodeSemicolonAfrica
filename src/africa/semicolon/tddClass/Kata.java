@@ -118,4 +118,36 @@ public class Kata {
         return count;
 
     }
-}
+
+    public String getReverse(int number) {
+        //number = 12345;
+
+        int firstDigit = number / 10000;
+        int firstModulo = number % 10000;
+        int secondDigit = firstModulo / 1000;
+        int secondModulo = firstModulo % 1000;
+        int thirdDigit = secondModulo / 100;
+        int thirdModulo = secondModulo % 100;
+        int fourthDigit = thirdModulo / 10;
+        int fourthModulo = thirdModulo % 10;
+        int fifthDigit = fourthModulo;
+        return fifthDigit + "" + fourthDigit + "" + thirdDigit + "" + secondDigit + "" + firstDigit;
+    }
+    public String getReverseUsingLoop(int number){
+        int remainder;
+        int dividend;
+        String reverse = "";
+        int divisor = 10;
+        while(number != 0){
+            remainder = number % divisor;
+            dividend = number / divisor;
+            reverse = reverse + remainder;
+            number = dividend;
+        }
+        return reverse;
+    }
+
+
+
+    }
+

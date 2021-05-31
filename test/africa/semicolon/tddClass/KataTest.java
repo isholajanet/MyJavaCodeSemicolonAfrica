@@ -112,6 +112,16 @@ public class KataTest {
         Kata factor = new Kata();
         assertEquals(4, factor.returnFactorCount(10));
     }
+    @Test
+    public void testToReverseNumbers(){
+        Kata kata = new Kata();
+        assertEquals("56789", kata.getReverse(98765));
+    }
+    @Test
+    public void testToReverseNumbersUsingLoop(){
+        Kata kata = new Kata();
+        assertEquals("456789", kata.getReverseUsingLoop(987654));
+    }
 
     }
 
