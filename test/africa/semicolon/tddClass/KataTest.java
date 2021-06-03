@@ -122,6 +122,11 @@ public class KataTest {
         Kata kata = new Kata();
         assertEquals("456789", kata.getReverseUsingLoop(987654));
     }
+    @Test
+    public void testToGetFactorial(){
+        Kata kata = new Kata();
+        assertEquals(720, kata.findFactorialOf(6));
+    }
 
     }
 

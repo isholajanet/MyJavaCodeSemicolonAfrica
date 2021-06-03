@@ -148,6 +148,21 @@ public class Kata {
     }
 
 
-
+//    public int findFactorialOf(int number) {
+//        int multiple = 1;
+//        while(number != 0){
+//            multiple = number * multiple;
+//            number --;
+//        }
+//        return multiple;
+//    }
+    public int findFactorialOf(int number){
+        int multiple= 1;
+        while(number > 1){
+            multiple = multiple * number;
+            number--;
+        }
+        return multiple;
     }
+}
 

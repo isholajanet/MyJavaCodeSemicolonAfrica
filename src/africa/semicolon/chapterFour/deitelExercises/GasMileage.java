@@ -14,14 +14,17 @@ public class GasMileage {
     }
 
     public void setMilesDriven(int milesDriven) {
+
         this.milesDriven = milesDriven;
     }
 
     public int getMilesDriven() {
+
         return milesDriven;
     }
 
     public void setGallons(int gallons) {
+
         this.gallons = gallons;
     }
 
@@ -38,10 +41,10 @@ public class GasMileage {
         int count = 1;
         System.out.println("Enter 1 to signify that tank is full and -1 to stop");
         UserInput = input.nextInt();
-        System.out.print("Enter the miles driven: ");
-        milesDriven = input.nextInt();
-        System.out.print("Enter gallons used for the trip: ");
-        gallons = input.nextInt();
+//        System.out.print("Enter the miles driven: ");
+//        milesDriven = input.nextInt();
+//        System.out.print("Enter gallons used for the trip: ");
+//        gallons = input.nextInt();
         while(UserInput != -1){
             milesDriven += milesDriven;
             gallons += gallons;
