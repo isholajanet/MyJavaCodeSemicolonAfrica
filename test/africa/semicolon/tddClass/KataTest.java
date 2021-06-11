@@ -128,5 +128,17 @@ public class KataTest {
         assertEquals(720, kata.findFactorialOf(6));
     }
 
+    @Test
+    public void testToGetBinary(){
+        Kata kata = new Kata();
+        assertEquals("1010", kata.findBinaryOf(10));
+    }
+
+    @Test
+    public void testToConvertToAnyBase(){
+        Kata kata = new Kata();
+        assertEquals("1010", kata.ConvertNumberToBase(10, 2));
+    }
+
     }
 

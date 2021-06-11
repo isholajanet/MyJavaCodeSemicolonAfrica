@@ -2,10 +2,14 @@ package africa.semicolon.chapterFour;
 
 public class asterick {
     public static void main(String[] args) {
-        for(int count = 1; count <= 10; count++){
-            for(int asterickCount = 1; asterickCount <= count; asterickCount++ ){
+        int count = 1;
+        int asterickCount = 1;
+        while( count <= 20){
+            while( asterickCount <= count){
                 System.out.print("*");
+                asterickCount++;
             }
+            count++;
             System.out.println();
         }
     }

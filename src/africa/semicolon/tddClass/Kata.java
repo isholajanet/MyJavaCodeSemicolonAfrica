@@ -2,20 +2,20 @@ package africa.semicolon.tddClass;
 import java.util.Scanner;
 
 public class Kata {
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        int number;
-        System.out.print("Enter a 3-digit number: ");
-        number = input.nextInt();
-        if(number/100 == number % 10 ){
-            System.out.println("Number is palindrome");
-        }else{
-            System.out.println("Number is not palindrome");
-
-        }
-
-
-    }
+//    public static void main(String[] args){
+//        Scanner input = new Scanner(System.in);
+//        int number;
+//        System.out.print("Enter a 3-digit number: ");
+//        number = input.nextInt();
+//        if(number/100 == number % 10 ){
+//            System.out.println("Number is palindrome");
+//        }else{
+//            System.out.println("Number is not palindrome");
+//
+//        }
+//
+//
+//    }
     private String grade;
     public String displayGrade(int score) {
 
@@ -163,6 +163,33 @@ public class Kata {
             number--;
         }
         return multiple;
+    }
+
+    public String findBinaryOf(int number){
+        int dividend;
+        int remainder = 0;
+        String binary = "";
+        while(number != 0){
+            remainder = number % 2;
+            dividend = number / 2;
+            number = dividend;
+            binary = remainder + binary + "";
+
+        }
+        return binary;
+    }
+
+    public String ConvertNumberToBase(int number, int base) {
+        int dividend;
+        int remainder;
+        String binary = "";
+        while(number != 0){
+            if(base )
+        }
+
+
+
+        return binary;
     }
 }
 
