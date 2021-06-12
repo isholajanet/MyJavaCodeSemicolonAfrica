@@ -105,10 +105,24 @@ public class PhoneApp {
                 3. Chat
                 4. Call Register
                 """;
+
     }
   public static String selectMessageSetting(int dial){
+        messageSetting();
         return switch (dial){
+            case 1  -> """
+                1. Message centre number
+                2. Message sent as
+                3. Message validity
+                    """;
+            case 2 -> """
+                1. Delivery reports
+                2. Reply via same centre
+                3. Character support
+                    """;
 
+
+            default -> "Enter a valid input: ";
         };
   }
     public static String selectMessagesMenu(int dial){
@@ -116,7 +130,7 @@ public class PhoneApp {
             case 1 -> "Write messages";
             case 2 -> "Inbox";
             case 3 -> "Outbox";
-            case 4 -> "Picture "
+            case 4 -> "Picture ";
 
             default -> "Enter a valid input: ";
         };
