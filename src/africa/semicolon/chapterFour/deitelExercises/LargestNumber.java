@@ -21,14 +21,6 @@ public class LargestNumber {
            count++;
        }
        return largest;
-//
-//        while (count < numbers.length){
-//            if (number > largest){
-//                largest = number;
-//            }
-//            count++;
-//        }
-        //System.out.println("The largest number is " +largest);
-//        return largest;
+
     }
 }
