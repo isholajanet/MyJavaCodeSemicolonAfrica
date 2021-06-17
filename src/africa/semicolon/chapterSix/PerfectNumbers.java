@@ -1,12 +1,6 @@
 package africa.semicolon.chapterSix;
 
 public class PerfectNumbers {
-    public static void main(String[] args) {
-        for (int count = 1; count <= 10; count++) {
-
-
-        }
-    }
 
     public static String getFactor(int number) {
         int factor = 1;
@@ -35,5 +29,13 @@ public class PerfectNumbers {
 
     public static boolean isPerfect(int number) {
         return number == sumOfFactors(number);
+    }
+
+    public static void main(String[] args) {
+        for(int count = 1; count <= 1000; count++){
+            if(sumOfFactors(count) == count){
+                System.out.println(count);
+            }
+        }
     }
 }

@@ -129,8 +129,23 @@ public class KataTest {
     @Test
     public void testToConvertToAnyBase() {
         assertEquals("12", Kata.ConvertNumberToBase(10, 8));
+    }
 
+    @Test
+    public void testToGetMaximumNumberInAnArrayList(){
+        int[] numbers = {12,34,56,78,90,32,54,65,76,98};
+        assertEquals(98, Kata.getMaximumNumber(numbers));
+    }
 
+    @Test
+    public void testToGetMinimumNumberInAnArrayList(){
+        int[] numbers = {12,34,56,78,90,32,54,65,76,98};
+        assertEquals(12, Kata.getMinimumNumber(numbers));
+    }
+    @Test
+    public void testToGetAverageOfAnArrayList(){
+        int[] numbers = {12,34,56,78,90,32,54,65,76,98};
+        assertEquals(59.5, Kata.getAverage(numbers));
     }
 
 }

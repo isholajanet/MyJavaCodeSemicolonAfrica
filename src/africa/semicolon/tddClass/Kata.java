@@ -169,5 +169,43 @@ public class Kata {
 
 
     }
+
+    public static int getMaximumNumber(int[] numbers) {
+        int highest = 0;
+        int count = 0;
+        while(count < numbers.length){
+            if(numbers[count] > highest){
+                highest = numbers[count];
+            }
+
+            count++;
+        }
+        return highest;
+    }
+
+    public static int getMinimumNumber(int[] numbers) {
+        int lowest = 99999999;
+        int count = 0;
+        while(count < numbers.length){
+            if(numbers[count] < lowest){
+                lowest = numbers[count];
+            }
+            count++;
+        }
+
+        return lowest;
+    }
+
+    public static double getAverage(int[] numbers) {
+        double average = 0;
+        int count = 0;
+        int totalNumber = 0;
+        while(count < numbers.length){
+            totalNumber+=numbers[count];
+            count++;
+        }
+        average = totalNumber / (count*1.0);
+        return average;
+    }
 }
 
