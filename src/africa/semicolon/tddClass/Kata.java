@@ -171,7 +171,7 @@ public class Kata {
     }
 
     public static int getMaximumNumber(int[] numbers) {
-        int highest = 0;
+        int highest = numbers[0];
         int count = 0;
         while(count < numbers.length){
             if(numbers[count] > highest){
@@ -184,7 +184,7 @@ public class Kata {
     }
 
     public static int getMinimumNumber(int[] numbers) {
-        int lowest = 99999999;
+        int lowest = numbers[0];
         int count = 0;
         while(count < numbers.length){
             if(numbers[count] < lowest){
@@ -197,7 +197,7 @@ public class Kata {
     }
 
     public static double getAverage(int[] numbers) {
-        double average = 0;
+        double average;
         int count = 0;
         int totalNumber = 0;
         while(count < numbers.length){
@@ -206,6 +206,31 @@ public class Kata {
         }
         average = totalNumber / (count*1.0);
         return average;
+    }
+
+    public static int sumOf(int[] numbers){
+        int count = 0;
+        int totalNumber = 0;
+        while(count < numbers.length){
+            totalNumber += numbers[count];
+            count++;
+        }
+        return totalNumber;
+    }
+
+    public static int maximumOfSum(int[] numbers) {
+        int maximumOfSum;
+
+        maximumOfSum = sumOf(numbers) - getMinimumNumber(numbers);
+        return maximumOfSum;
+    }
+
+    public static int minimumOfSum(int[] numbers) {
+        int minimumOfSum;
+
+        minimumOfSum = sumOf(numbers) - getMaximumNumber(numbers);
+
+        return minimumOfSum;
     }
 }
 

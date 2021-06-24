@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class PhoneApp {
 
-
-    public static String showMenu(){
+    public static String menuFunction(){
         return """
                 --> Enter 1 for Phone book
                 --> Enter 2 for Messages
@@ -19,12 +18,12 @@ public class PhoneApp {
                 --> Enter 10 for reminder
                 --> Enter 11 for Clock
                 --> Enter 12 for profiles
-                --> Enter 13 for sim services
+                --> Enter 13 for sim services  
                 """;
     }
-
-    public static String phoneBookMenu(){
+    public static String phoneBookFunctions(){
         return """
+                0. Main menu functions
                 1. Search
                 2. Service Nos.
                 3. Add name
@@ -32,57 +31,24 @@ public class PhoneApp {
                 5. Edit
                 6. Assign tone
                 7. Send b'card
-                8. Options
+                8. Options --> Explore 
                 9. Speed dials
                 10. Voice tags
                 """;
+
+
     }
-
-    public static String selectPhoneBookMenu(int dial){
-       return switch(dial) {
-           case 1 -> "Search";
-           case 2 -> "Service Nos";
-           case 3 -> "Add name";
-           case 4 -> "Erase";
-           case 5 -> "Edit";
-           case 6 -> "Assign tone";
-           case 7 -> "Send b'card";
-           case 8 -> "Options";
-           case 9 -> "Speed dials";
-           case 10 -> "Voice tags";
-
-           default -> "Enter a valid input";
-       };
-    }
-
-    public static String optionMenu(){
+    public static String optionsFunctions(){
         return """
+                0. Main menu function
                 1. Type Of view
                 2. Memory status
+                3. Phone book function 
                 """;
     }
-
-    public static String selectMenu(int dial){
-        return switch (dial){
-            case 1 -> "Phone book";
-            case 2 -> "Messages";
-            case 3 -> "Chat";
-            case 4 -> "Call Register";
-            case 5 -> "Tones";
-            case 6 -> "Settings";
-            case 7 -> "Call divert";
-            case 8 -> "Games";
-            case 9 -> "Calculator";
-            case 10 -> "Reminder";
-            case 11 -> "Clock";
-            case 12 -> "Profiles";
-            case 13 -> "Sim services";
-
-            default -> "Enter a valid input: ";
-        };
-    }
-    public static String messagesMenu(){
+    public static String messagesFunctions(){
         return """
+                0. Main menu functions
                 1. Write messages
                 2. Inbox
                 3. Outbox
@@ -96,48 +62,102 @@ public class PhoneApp {
                 10. Service command editor
                 """;
     }
-    public static String messageSetting(){
+    public static String messageSettingFunctions(){
         return """
-                 1. Set
-                    ---> Explore
+                0. Main menu 
+                1. Set
                 2. Common
-                    ---> Explore
-                3. Chat
-                4. Call Register
+                3. Messages 
                 """;
-
     }
-  public static String selectMessageSetting(int dial){
-        messageSetting();
-        return switch (dial){
-            case 1  -> """
+    public static String setFunctions(){
+        return """
+                0. Main menu
                 1. Message centre number
-                2. Message sent as
+                2. Messages sent as
                 3. Message validity
-                    """;
-            case 2 -> """
-                1. Delivery reports
+                4. Message settings
+                """;
+    }
+    public static String commonFunctions(){
+        return """
+                0. Main menu
+                1. Delivery report
                 2. Reply via same centre
                 3. Character support
-                    """;
-
-
-            default -> "Enter a valid input: ";
-        };
-  }
-    public static String selectMessagesMenu(int dial){
-        return switch (dial){
-            case 1 -> "Write messages";
-            case 2 -> "Inbox";
-            case 3 -> "Outbox";
-            case 4 -> "Picture ";
-
-            default -> "Enter a valid input: ";
-        };
+                4. Message settings
+                """;
     }
 
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(menuFunction());
+        int userInput = 0;
+        while(userInput != -1) {
+            System.out.println("Enter an option: ");
+            userInput = input.nextInt();
+            switch (userInput) {
+                case 0 -> System.out.println(menuFunction());
+                case 1 -> {
+                    System.out.println(phoneBookFunctions());
+                    System.out.println("Enter an option: ");
+                    userInput = input.nextInt();
+                    if (userInput == 8) {
+                        System.out.println(optionsFunctions());
+                    }
+                    System.out.println("Enter an option: ");
+                    userInput = input.nextInt();
+                    switch (userInput) {
+                        case 0 -> System.out.println(menuFunction());
+                        case 3 -> System.out.println(phoneBookFunctions());
+                    }
+                }
+                case 2 -> {
+                    System.out.println(messagesFunctions());
+                    System.out.println("Enter an option: ");
+                    userInput = input.nextInt();
+                    if(userInput == 0){
+                        System.out.println(menuFunction());
+                    }else if(userInput == 7){
+                        System.out.println(messageSettingFunctions());
+                        System.out.println("Enter an option: ");
+                        userInput = input.nextInt();
+                        switch (userInput){
+                            case 0 -> System.out.println(menuFunction());
+                            case 1 -> {
+                                System.out.println(setFunctions());
+                                System.out.println("Enter an option: ");
+                                userInput = input.nextInt();
+                                if(userInput == 4){
+                                    System.out.println(messageSettingFunctions());
+                                } else if(userInput == 0){
+                                    System.out.println(menuFunction());
+                                }
+                            }
+                            case 2 -> System.out.println(commonFunctions());
+                            case 3 -> {
+                                System.out.println(messagesFunctions());
+                                System.out.println("Enter an option: ");
+                                userInput = input.nextInt();
+                                if(userInput == 7){
+                                    System.out.println(messageSettingFunctions());
+                                }
+                            }
+                            case 4 -> System.out.println(messageSettingFunctions());
+                            default -> System.out.println("Enter a valid input: ");
+
+                        }
+                    }
+
+
+
+                }
+            }
+        }
 
     }
+
+
+
 }

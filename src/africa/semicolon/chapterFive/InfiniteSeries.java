@@ -14,16 +14,19 @@ public class InfiniteSeries {
         int counter = 1;
         double pie = 0.0;
 
-        while(counter <= 200){
-            if(counter % 2 == 0) {
+        while(counter <= 200000){
+            if(counter % 2 == 1) {
                 pie = pie + (4 / denominator);
             }
-            else if(counter % 2 == 1){
+            else if(counter % 2 == 0){
                 pie = pie - (4 / denominator);
             }
             System.out.println(counter + "\t\t" + pie);
             counter++;
             denominator+=2;
+            if(pie == 3.14159){
+                System.out.println(counter);
+            }
         }
 
 

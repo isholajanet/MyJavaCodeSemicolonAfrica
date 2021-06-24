@@ -148,5 +148,23 @@ public class KataTest {
         assertEquals(59.5, Kata.getAverage(numbers));
     }
 
+    @Test
+    void testThatSystemCanGetTheSumOfAnArray(){
+        int[] numbers = {12,34,56,78,90,32,54,76,98};
+        assertEquals(530, Kata.sumOf(numbers));
+    }
+
+    @Test
+    void testThatSystemCanGetMaximumOfTheSumOfElementInAnArray(){
+        int[] numbers = {12,34,56,78,32,45,67,65,11,23};
+        assertEquals(412, Kata.maximumOfSum(numbers));
+    }
+
+    @Test
+    void testThatSystemCanGetMinimumOfTheSumOfElementInAnArray(){
+        int[] numbers = {12,34,56,78,32,45,67,65,11,23};
+        assertEquals(345, Kata.minimumOfSum(numbers));
+    }
+
 }
 

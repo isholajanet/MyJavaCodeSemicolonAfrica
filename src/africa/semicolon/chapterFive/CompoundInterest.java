@@ -8,6 +8,7 @@ public class CompoundInterest {
         System.out.println("Enter the original amount invested ");
         double principal = input.nextDouble();
         System.out.println("Enter the number of years: ");
+
         double years = input.nextDouble();
         
         double annualRate = 5;

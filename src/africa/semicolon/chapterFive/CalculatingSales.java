@@ -14,7 +14,8 @@ public class CalculatingSales {
                 productNumber = input.nextInt();
                 if(productNumber != 0) {
                     System.out.println("Enter the quantity sold: ");
-                    quantity = input.nextInt();
+                    quantity =
+                            input.nextInt();
                 }
                 switch (productNumber) {
                     case 1 -> productPrice = 2.98;
