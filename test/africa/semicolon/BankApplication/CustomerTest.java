@@ -5,17 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CustomerAccountTest {
+public class CustomerTest {
     Customer bankCustomer;
     @BeforeEach
     void setUp(){
-        bankCustomer = new Customer();
+        bankCustomer = new Customer("Janet", "Ishola", 1234);
     }
-    @Test
-    void testThatCustomerCanSetName(){
-        bankCustomer.setName("Janet");
-        assertEquals("Janet", bankCustomer.getName());
-    }
+
     @Test
     void testThatCustomerCanSetPassword(){
         bankCustomer.setPassword(1234);
@@ -46,6 +42,17 @@ public class CustomerAccountTest {
         bankCustomer.deposit(5000.00);
         bankCustomer.loadAirtime(3552345, 1000);
         assertEquals(4000, bankCustomer.getAccountBalance());
+    }
+    @Test
+    void testThatSystemCanRegisterACustomer(){
+        Customer firstCustomer = new Customer("Janet", "Ishola", 1234);
+        Customer secondCustomer = new Customer("Titobi", "Ligali", 4567);
+        Customer thirdCustomer = new Customer("Olayemi", "Oladunni", 6789);
+        Customer fourthCustomer = new Customer("Osinuga", "Timilehin", 1250);
+        assertEquals(10001, firstCustomer.getAccountNumber());
+        assertEquals(10002, secondCustomer.getAccountNumber());
+        assertEquals(10003, thirdCustomer.getAccountNumber());
+        assertEquals(10004, fourthCustomer.getAccountNumber());
     }
 
 }

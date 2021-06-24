@@ -1,16 +1,13 @@
 package africa.semicolon.BankApplication;
 
-public class Customer {
-    private String name;
-    private int password;
-    private double accountBalance;
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
+public class Customer {
+    private String firstName;
+    private String lastName;
+    private int password;
+    private int accountNumber;
+    private static int numberOfCustomers;
+    private double accountBalance;
 
     public void setPassword(int password) {
         this.password = password;
@@ -20,7 +17,22 @@ public class Customer {
         return password;
     }
 
-    public void login(String name, int password) {
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public Customer(String firstName, String lastName, int password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        accountNumber = 10000+numberOfCustomers;
+        numberOfCustomers++;
+    }
+    public Customer(){
 
     }
 
@@ -50,5 +62,9 @@ public class Customer {
     public void loadAirtime(int phoneNumber, int amountToLoad) {
         withdraw(amountToLoad);
 
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
     }
 }
