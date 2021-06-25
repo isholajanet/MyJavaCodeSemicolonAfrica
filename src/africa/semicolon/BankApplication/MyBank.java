@@ -18,7 +18,24 @@ public class MyBank {
                         bankApp.staffLogin(options, pin);
                         break;
                     case 2:
-                        System.out.println("Create account: ");
+                        String prompt = """
+                                Enter 1 to Login
+                                Enter 2 to register
+                                """;
+                        System.out.println(prompt);
+                        int userInput = input.nextInt();
+                        switch (userInput){
+                            case 1:
+                                System.out.println("Enter first name: ");
+                                String firstName = input.next();
+                                System.out.println("Enter last name: ");
+                                String lastName = input.next();
+                                System.out.println("Enter password: ");
+                                int password = input.nextInt();
+                                bankApp.registerCustomer(firstName,lastName,password);
+                                bankApp.customerLogin(10001, 1234);
+                        }
+
 
 
 

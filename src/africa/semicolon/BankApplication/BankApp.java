@@ -71,5 +71,23 @@ public class BankApp {
                 *********************************************
                 """;
     }
+
+    public void customerLogin(int accountNumber, int password) {
+        String prompt = """
+                Enter 1 to deposit
+                Enter 2 to withdraw
+                Enter 3 to transfer
+                Enter 4 to load airtime
+                Enter 5 to log out
+                """;
+       if((bankAccount.getAccountNumber() == accountNumber) && (bankAccount.getPin() == password)){
+           System.out.println(prompt);
+       }
+
+    }
+
+    public void registerCustomer(String firstName, String lastName, int password) {
+
+    }
 }
 
