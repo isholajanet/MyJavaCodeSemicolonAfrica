@@ -5,17 +5,16 @@ public class Customer {
     private String firstName;
     private String lastName;
     private int password;
-    private int accountNumber;
-    private static int numberOfCustomers;
-    private double accountBalance;
+    private BankAccount bankAccount;
 
-    public void setPassword(int password) {
-        this.password = password;
+    public BankAccount getBankAccount() {
+        return bankAccount;
     }
 
-    public int getPassWord() {
-        return password;
+    public void setBankAccount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -25,46 +24,25 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    public Customer(String firstName, String lastName, int password) {
-        this.firstName = firstName;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
         this.password = password;
-        accountNumber = 10000+numberOfCustomers;
-        numberOfCustomers++;
     }
-    public Customer(){
-
+    public String displayName(){
+        return getLastName() + " " + getFirstName();
     }
 
-    public void deposit(double amountToBeDeposit) {
-        if(amountToBeDeposit < 0){
-            accountBalance = accountBalance;
-        }else {
-            accountBalance = accountBalance + amountToBeDeposit;
-        }
 
-    }
 
-    public double getAccountBalance() {
-        return accountBalance;
-    }
-
-    public double withdraw(double amountToWithdraw) {
-        if(amountToWithdraw > 0){
-            if(amountToWithdraw <= accountBalance) {
-                accountBalance = accountBalance - amountToWithdraw;
-            }
-        }
-
-        return amountToWithdraw;
-    }
-
-    public void loadAirtime(int phoneNumber, int amountToLoad) {
-        withdraw(amountToLoad);
-
-    }
-
-    public int getAccountNumber() {
-        return accountNumber;
-    }
 }

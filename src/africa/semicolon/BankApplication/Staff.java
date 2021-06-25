@@ -8,11 +8,19 @@ public class Staff {
         this.passWord = passWord;
     }
 
-    public boolean confirmDetails(String name, int passWord) {
-        if((this.name.equals(name)) && (this.passWord == passWord)){
-            return true;
-        }else{
-            return false;
-        }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(int passWord) {
+        this.passWord = passWord;
     }
 }

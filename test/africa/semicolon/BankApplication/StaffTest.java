@@ -12,10 +12,7 @@ public class StaffTest {
         bankStaff = new Staff("admin", 1234);
 
     }
-   @Test
-    void testThatSystemCanCheckIfTheLoginDetailsEnteredIsCorrect(){
-        assertTrue(bankStaff.confirmDetails("admin", 1234));
-   }
+
 
 
 }
