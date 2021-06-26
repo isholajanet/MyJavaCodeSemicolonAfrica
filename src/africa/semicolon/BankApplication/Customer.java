@@ -7,6 +7,12 @@ public class Customer {
     private int password;
     private BankAccount bankAccount;
 
+    public Customer(String firstName, String lastName, int password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+    }
+
     public BankAccount getBankAccount() {
         return bankAccount;
     }

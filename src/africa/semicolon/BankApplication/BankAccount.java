@@ -24,7 +24,11 @@ public class BankAccount {
     }
 
     public void setAccountNumber(int accountNumber) {
+        int numberOfCustomers = 0;
+        numberOfCustomers++;
+        accountNumber = 10000 + numberOfCustomers;
         this.accountNumber = accountNumber;
+
     }
 
     public int getPin() {
@@ -41,6 +45,10 @@ public class BankAccount {
         accountNumber = 10000 + numbersOfAccount;
         numbersOfAccount++;
     }
+    public void getBankAccount(){
+
+    }
+
     public void deposit(double amountToBeDeposit) {
         if(amountToBeDeposit < 0){
             accountBalance = accountBalance;

@@ -1,14 +1,16 @@
 package africa.semicolon.BankApplication;
 
-
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BankApp {
     BankAccount bankAccount;
-    Customer[] bankCustomers;
+    ArrayList<Customer> bankCustomers = new ArrayList<>();
     Staff bankStaff;
 
-    public void staffLogin(int option, int pin) {
+    public void staffLogin(int options, int pin) {
         bankStaff = new Staff("admin", 1234);
+        Scanner input = new Scanner(System.in);
         if(bankStaff.getPassWord() == pin){
            String prompt = """
                     Enter 1 to view all account
@@ -16,6 +18,7 @@ public class BankApp {
                     Enter 3 to logout
                     """;
             System.out.println(prompt);
+            int option = input.nextInt();
 
             switch (option){
                 case 1:{
@@ -33,13 +36,17 @@ public class BankApp {
     }
 
     private void deleteAccount() {
-        bankCustomers = new Customer[0];
+        bankCustomers.remove(0);
     }
 
     private void viewAllAccount() {
         for(Customer customer: bankCustomers){
-            System.out.println(customer.displayName() + " " + customer.getBankAccount().getAccountNumber()
-            + " " + customer.getBankAccount().getAccountBalance());
+            if(customer!=null) {
+                System.out.println(customer.displayName() + " " + customer.getBankAccount().getAccountNumber()
+                        + " " + customer.getBankAccount().getAccountBalance());
+            }else{
+                System.out.println("Customer is null");
+            }
         }
     }
 
@@ -80,13 +87,19 @@ public class BankApp {
                 Enter 4 to load airtime
                 Enter 5 to log out
                 """;
-       if((bankAccount.getAccountNumber() == accountNumber) && (bankAccount.getPin() == password)){
            System.out.println(prompt);
-       }
 
     }
 
     public void registerCustomer(String firstName, String lastName, int password) {
+
+        Customer customer = new Customer(firstName, lastName, password);
+        bankCustomers.add(customer);
+
+
+
+
+
 
     }
 }
