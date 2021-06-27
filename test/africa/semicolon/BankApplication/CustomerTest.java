@@ -40,7 +40,7 @@ public class CustomerTest {
     @Test
     void testThatSystemCanLoadAirtimeFromAnAccountToAMobileNumber(){
         bankAccount.deposit(5000.00);
-        bankAccount.loadAirtime(3552345, 1000);
+        bankAccount.loadAirtime( 1000);
         assertEquals(4000, bankAccount.getAccountBalance());
     }
     @Test

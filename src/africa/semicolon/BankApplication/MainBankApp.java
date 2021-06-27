@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 import static africa.semicolon.BankApplication.BankApp.mainMenuFunction;
 
-public class MyBank {
+public class MainBankApp {
     public static void main(String[] args) {
             Scanner input = new Scanner(System.in);
             BankApp bankApp = new BankApp();
+            BankAccount bankAccount = new BankAccount();
             System.out.println(mainMenuFunction());
             int options = input.nextInt();
             while (options != 3){
@@ -57,12 +58,46 @@ public class MyBank {
                                 System.out.println("Enter your password: ");
                                 int userPassword = input.nextInt();
                                 bankApp.customerLogin(11001, 1234);
-                                if((bankApp.bankAccount.getAccountNumber() == accNumber) && ((bankApp.bankAccount.getPin() == userPassword))){
+                                if((bankApp.bankAccount.getAccountNumber() == accNumber) && (bankApp.bankAccount.getPin() == userPassword)){
                                     bankApp.customerLogin(accNumber,userPassword);
                                     System.out.println("Choose an options: ");
                                     int userOptions = input.nextInt();
                                     switch (userOptions){
                                         case 1:
+                                            System.out.println("Enter deposit amount ");
+                                            System.out.println("My account balance is "+bankAccount.getAccountBalance());
+                                            int depositAmount = input.nextInt();
+                                            bankAccount.deposit(depositAmount);
+                                            System.out.println("Successful");
+                                            System.out.println("My new Account Balance is " +bankAccount.getAccountBalance());
+                                            break;
+                                        case 2:
+                                            System.out.println("Enter withdrawal amount: ");
+                                            System.out.println("My account balance is: " +bankAccount.getAccountBalance());
+                                            double withdrawalAmount = input.nextInt();
+                                            bankAccount.withdraw(withdrawalAmount);
+                                            System.out.println("My account balance is: " +bankAccount.getAccountBalance());
+                                            System.out.println("Withdrawal successful");
+                                            break;
+                                        case 3:
+                                            System.out.println("Enter account number: ");
+                                            int accountNumber = input.nextInt();
+                                            System.out.println("Enter withdrawal amount: ");
+                                            double transferAmount = input.nextDouble();
+                                            bankAccount.withdraw(transferAmount);
+                                            System.out.println("Amount transferred successfully");
+                                            break;
+                                        case 4:
+                                            System.out.println("Enter phone number: ");
+                                            long phoneNumber = input.nextLong();
+                                            System.out.println("Enter the airtime amount: ");
+                                            int airtimeAmount = input.nextInt();
+                                            bankAccount.loadAirtime(airtimeAmount);
+                                            System.out.println("Airtime transferred successfully");
+                                            break;
+                                        case 5:
+                                            break;
+                                    }
 
                                     }
 
@@ -84,4 +119,4 @@ public class MyBank {
 
 
         }
-    }
+

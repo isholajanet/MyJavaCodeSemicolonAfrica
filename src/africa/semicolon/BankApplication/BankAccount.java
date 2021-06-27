@@ -12,14 +12,17 @@ public class BankAccount {
     }
 
     public String getCustomerName() {
+
         return customerName;
     }
 
     public void setCustomerName(String customerName) {
+
         this.customerName = customerName;
     }
 
     public int getAccountNumber() {
+
         return accountNumber;
     }
 
@@ -32,10 +35,12 @@ public class BankAccount {
     }
 
     public int getPin() {
+
         return pin;
     }
 
     public void setPin(int pin) {
+
         this.pin = pin;
     }
 
@@ -46,6 +51,7 @@ public class BankAccount {
         numbersOfAccount++;
     }
     public void getBankAccount(){
+
 
     }
 
@@ -59,6 +65,7 @@ public class BankAccount {
     }
 
     public double getAccountBalance() {
+
         return accountBalance;
     }
 
@@ -72,7 +79,7 @@ public class BankAccount {
         return amountToWithdraw;
     }
 
-    public void loadAirtime(int phoneNumber, int amountToLoad) {
+    public void loadAirtime( int amountToLoad) {
         withdraw(amountToLoad);
 
     }
