@@ -38,7 +38,7 @@ public class MainBankApp {
 
                                 if((firstName != null) && (lastName != null ) && (password != 0)){
                                     System.out.println("Account created successfully");
-                                    System.out.println(bankApp.bankCustomers.get(0).getFirstName());
+                                    System.out.println(bankApp.getBankCustomers().get(0).getFirstName());
                                     System.out.println(prompt);
                                     userInput = input.nextInt();
                                         if(userInput == 2){
@@ -57,9 +57,9 @@ public class MainBankApp {
                                 int accNumber = input.nextInt();
                                 System.out.println("Enter your password: ");
                                 int userPassword = input.nextInt();
-                                bankApp.customerLogin(11001, 1234);
-                                if((bankApp.bankAccount.getAccountNumber() == accNumber) && (bankApp.bankAccount.getPin() == userPassword)){
-                                    bankApp.customerLogin(accNumber,userPassword);
+                                bankApp.customerLogin(accNumber,userPassword);
+                                if((bankAccount.getAccountNumber() == accNumber) && (bankAccount.getPin() == userPassword)){
+                                  //  bankApp.customerLogin(accNumber,userPassword);
                                     System.out.println("Choose an options: ");
                                     int userOptions = input.nextInt();
                                     switch (userOptions){

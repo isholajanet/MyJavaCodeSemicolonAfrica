@@ -9,7 +9,7 @@ public class CustomerTest {
     BankAccount bankAccount;
     @BeforeEach
     void setUp(){
-        bankAccount = new BankAccount("Ishola Janet", 1234);
+        bankAccount = new BankAccount();
     }
 
     @Test
@@ -42,13 +42,6 @@ public class CustomerTest {
         bankAccount.deposit(5000.00);
         bankAccount.loadAirtime( 1000);
         assertEquals(4000, bankAccount.getAccountBalance());
-    }
-    @Test
-    void testThatSystemCanRegisterACustomer(){
-        BankAccount firstCustomer = new BankAccount("Janet Ishola", 1234);
-        BankAccount secondCustomer = new BankAccount("Janet Ishola", 1234);
-        assertEquals(10001, firstCustomer.getAccountNumber());
-        assertEquals(10002, secondCustomer.getAccountNumber());
     }
 
 

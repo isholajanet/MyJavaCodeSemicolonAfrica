@@ -8,6 +8,8 @@ public class BankAccount {
     private double accountBalance;
 
     public BankAccount() {
+        accountNumber = 10000 + numbersOfAccount;
+        numbersOfAccount++;
 
     }
 
@@ -26,14 +28,6 @@ public class BankAccount {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        int numberOfCustomers = 0;
-        numberOfCustomers++;
-        accountNumber = 10000 + numberOfCustomers;
-        this.accountNumber = accountNumber;
-
-    }
-
     public int getPin() {
 
         return pin;
@@ -44,16 +38,6 @@ public class BankAccount {
         this.pin = pin;
     }
 
-    public BankAccount(String customerName, int pin) {
-        this.customerName = customerName;
-        this.pin = pin;
-        accountNumber = 10000 + numbersOfAccount;
-        numbersOfAccount++;
-    }
-    public void getBankAccount(){
-
-
-    }
 
     public void deposit(double amountToBeDeposit) {
         if(amountToBeDeposit < 0){

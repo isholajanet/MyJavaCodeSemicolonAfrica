@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankApp {
-    BankAccount bankAccount;
-    ArrayList<Customer> bankCustomers = new ArrayList<>();
-    Staff bankStaff;
+    private ArrayList<Customer> bankCustomers = new ArrayList<>();
+    private Staff bankStaff;
 
     public void staffLogin(int options, int pin) {
         bankStaff = new Staff("admin", 1234);
@@ -50,16 +49,6 @@ public class BankApp {
         }
     }
 
-    public BankAccount getBankAccount() {
-        return bankAccount;
-    }
-
-    public void setBankAccount(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
-
-
-
     public Staff getBankStaff() {
         return bankStaff;
     }
@@ -95,12 +84,14 @@ public class BankApp {
 
         Customer customer = new Customer(firstName, lastName, password);
         bankCustomers.add(customer);
+    }
 
+    public ArrayList<Customer> getBankCustomers() {
+        return bankCustomers;
+    }
 
-
-
-
-
+    public void setBankCustomers(ArrayList<Customer> bankCustomers) {
+        this.bankCustomers = bankCustomers;
     }
 }
 
