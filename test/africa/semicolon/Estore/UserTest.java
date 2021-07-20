@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserTest {
     User user;
@@ -55,8 +56,48 @@ public class UserTest {
         assertEquals("Eniola", admin.getName());
     }
     @Test
-    void customerCanAddBillingInfoTest(){
+    void customerCanHasBillingInformationTest(){
         Customer customer = new Customer();
         BillingInformation billingInformation = new BillingInformation();
+        Address address = new Address();
+        CreditCardInformation creditCardInformation = new CreditCardInformation();
+        billingInformation.setReceiverName("Janet");
+        billingInformation.setPhoneNumber("09028215330");
+        address.setCityName("Ibadan");
+        address.setCountryName("Nigeria");
+        address.setHouseNumber(20);
+        address.setStreet("Apata");
+        address.setState("Oyo");
+        billingInformation.setDeliveryAddress(address);
+        creditCardInformation.setCardName("Janet");
+        creditCardInformation.setCreditCardNumber("17828488585959");
+        creditCardInformation.setCardType(CardType.MASTER_CARD);
+        creditCardInformation.setMonth(12);
+        creditCardInformation.setCardExpirationYear(2022);
+        billingInformation.setCreditCardInformation(creditCardInformation);
+        customer.addBillingInformation(billingInformation);
+        assertEquals(1, customer.getNumbersOfBillingInformation());
+    }
+    @Test
+    void BillingInformationHasAddress(){
+        BillingInformation billingInformation = new BillingInformation();
+        Address address = new Address();
+        address.setCityName("Ibadan");
+        address.setCountryName("Nigeria");
+        address.setHouseNumber(20);
+        address.setStreet("Apata");
+        address.setState("Oyo");
+        billingInformation.setDeliveryAddress(address);
+    }
+    @Test
+    void BillingInformationHasCreditCardInformationTest(){
+        BillingInformation billingInformation = new BillingInformation();
+        CreditCardInformation creditCardInformation = new CreditCardInformation();
+        creditCardInformation.setCardName("Janet");
+        creditCardInformation.setCreditCardNumber("17828488585959");
+        creditCardInformation.setCardType(CardType.MASTER_CARD);
+        creditCardInformation.setMonth(12);
+        creditCardInformation.setCardExpirationYear(2022);
+        billingInformation.setCreditCardInformation(creditCardInformation);
     }
 }
