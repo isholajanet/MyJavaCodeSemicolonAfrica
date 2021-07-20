@@ -100,4 +100,29 @@ public class UserTest {
         creditCardInformation.setCardExpirationYear(2022);
         billingInformation.setCreditCardInformation(creditCardInformation);
     }
+    @Test
+    void shoppingCartContainItemsTest(){
+        ShoppingCart shoppingCart = new ShoppingCart();
+        Items items = new Items();
+        Product product = new Product();
+        product.setProductName("Bag");
+        product.setPrice(3000);
+        product.setProductId(1);
+        product.setProductDescription("A nice bag");
+        product.setProductCategory(ProductCategory.CLOTHING);
+        items.setQuantity(4);
+        items.setProducts(product);
+    }
+    @Test
+    void ItemsContainProduct(){
+        Items items = new Items();
+        Product product = new Product();
+        product.setProductName("Bag");
+        product.setPrice(3000);
+        product.setProductId(1);
+        product.setProductDescription("A nice bag");
+        product.setProductCategory(ProductCategory.CLOTHING);
+        items.setProducts(product);
+    }
+
 }

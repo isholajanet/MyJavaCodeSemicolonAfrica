@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Items {
     private int quantity;
-    private ArrayList <Product> products;
+    private Product products;
+
 
     public int getQuantity() {
         return quantity;
@@ -14,11 +15,11 @@ public class Items {
         this.quantity = quantity;
     }
 
-    public ArrayList<Product> getProducts() {
+    public Product getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products) {
+    public void setProducts(Product products) {
         this.products = products;
     }
 }
