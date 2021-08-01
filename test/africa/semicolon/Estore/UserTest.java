@@ -56,7 +56,7 @@ public class UserTest {
         assertEquals("Eniola", admin.getName());
     }
     @Test
-    void customerCanHasBillingInformationTest(){
+    void customerHasBillingInformationTest(){
         Customer customer = new Customer();
         BillingInformation billingInformation = new BillingInformation();
         Address address = new Address();

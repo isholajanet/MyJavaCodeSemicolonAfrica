@@ -232,5 +232,16 @@ public class Kata {
 
         return minimumOfSum;
     }
+
+    private static int isMultipleOf(int number){
+
+        int multiple = 0;
+        for (int i = 0; i < number; i++) {
+
+        }
+
+
+        return multiple;
+    }
 }
 

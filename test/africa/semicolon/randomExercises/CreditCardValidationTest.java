@@ -43,7 +43,7 @@ class CreditCardValidationTest {
     }
     @Test
     public void systemCanGetTheNumberOfDigitsFromNumber(){
-        assertEquals("7992", creditCardValidation.getPrefix("79927398713", 4));
+        assertEquals("799", creditCardValidation.getPrefix("79927398713", 15));
     }
 
 

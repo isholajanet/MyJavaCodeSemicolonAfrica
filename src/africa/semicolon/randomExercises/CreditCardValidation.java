@@ -1,7 +1,5 @@
 package africa.semicolon.randomExercises;
 
-import java.util.Scanner;
-
 public class CreditCardValidation {
     private String number;
     public void setNumber(String number) {
@@ -53,14 +51,18 @@ public class CreditCardValidation {
         return true;
     }
 
-//    public String getPrefix(String number, int prefix) {
-//        String prefixNumber;
-//        for(int i = 0; i <= number.charAt(i); i++){
-//            if(i > number.length()){
-//                return number;
-//            }else
-//                return prefixNumber;
-//        }
-//        return prefixNumber;
-//    }
+    public String getPrefix(String number, int prefix) {
+        String prefixNumber = "";
+        int count;
+            for(count = 0; count <= prefix-1; count++){
+                if(count > number.length()){
+                    prefixNumber = number;
+                    throw new IllegalArgumentException(number);
+
+                }
+                prefixNumber += number.charAt(count);
+            }
+
+        return prefixNumber;
+    }
 }

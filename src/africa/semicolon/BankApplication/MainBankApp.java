@@ -57,9 +57,8 @@ public class MainBankApp {
                                 int accNumber = input.nextInt();
                                 System.out.println("Enter your password: ");
                                 int userPassword = input.nextInt();
-                                bankApp.customerLogin(accNumber,userPassword);
                                 if((bankAccount.getAccountNumber() == accNumber) && (bankAccount.getPin() == userPassword)){
-                                  //  bankApp.customerLogin(accNumber,userPassword);
+                                    bankApp.customerLogin(accNumber,userPassword);
                                     System.out.println("Choose an options: ");
                                     int userOptions = input.nextInt();
                                     switch (userOptions){
