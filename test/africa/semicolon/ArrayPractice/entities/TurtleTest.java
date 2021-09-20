@@ -241,9 +241,12 @@ class TurtleTest {
         turtle.turnRight();
         turtle.moveForward(6, board);
         //board.displayBoard();
-        turtle.turnLeft();
+        turtle.turnRight();
+        System.out.println(turtle.getyCoordinate());
+        System.out.println(turtle.getxCoordinate());
         turtle.moveForward(2,board);
         board.displayBoard();
+
 
 
 

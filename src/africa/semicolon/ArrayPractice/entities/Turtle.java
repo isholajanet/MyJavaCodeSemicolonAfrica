@@ -114,10 +114,10 @@ public class Turtle {
         if(direction.equals(CardinalPoint.EAST)){
             if (pen.getPenPosition().equals(PenPosition.DOWN)){
                 for(int i = 0; i < numberOfSteps; i++){
-               pad.getFloor()[yCoordinate][xCoordinate] = 1;
-               xCoordinate++;
-           }
-                System.out.println(xCoordinate);
+                 pad.getFloor()[yCoordinate][xCoordinate] = 1;
+                 xCoordinate++;
+                }
+
             }
             else {
                 System.out.println("Moving forward");
