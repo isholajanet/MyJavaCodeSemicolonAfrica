@@ -1,4 +1,6 @@
 package africa.semicolon.chapterSeven.dietelExercises;
+import africa.semicolon.Exceptions.AirlineReservationException;
+
 import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.util.Arrays;
@@ -12,6 +14,7 @@ public class AirlineReservationSystem {
     private SecureRandom random = new SecureRandom();
     private Boolean[] seatList = {false,false,false,false,false,false,false,false,false,false};
     private Boolean isSeatTaken = false;
+
     public void setFlightType(int input) {
         if(input == 1){
             flightType = FlightType.FIRST_CLASS;
@@ -59,4 +62,9 @@ public class AirlineReservationSystem {
         return isSeatTaken;
     }
 
+    public void checkSeatList() throws AirlineReservationException {
+        if(isSeatTaken)
+            throw new AirlineReservationException("Seat assigned!!!");
+
+    }
 }
